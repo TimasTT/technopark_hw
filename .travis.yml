@@ -1,5 +1,11 @@
 language: c
 
+addons:
+  apt:
+    packages:
+      - cmake
+      - valgrind
+
 before_script:
   - mkdir cmake-build-debug
   - cd cmake-build-debug
@@ -16,5 +22,4 @@ jobs:
     - stage: memcheck
       name: "Memory check"
       script:
-        - apt-get update && apt-get install -y valgrind
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test
