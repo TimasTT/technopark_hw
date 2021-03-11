@@ -11,7 +11,7 @@ jobs:
       script:
         - cmake ../
         - make
-        - ./cmake-build-debug/prog
+        - ./prog
 
     - stage: tests
       name: "CheckSpamTests"
@@ -19,4 +19,4 @@ jobs:
       script:
         - cmake ../
         - make
-        - ./cmake-build-dedbug/test
+        - ./test
