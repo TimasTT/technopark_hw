@@ -1,4 +1,4 @@
-language: cpp
+language: c
 
 before_script:
   - mkdir cmake-build-debug
@@ -8,8 +8,15 @@ jobs:
   include:
     - stage: build
       neme: "Build"
-      script: ./cmake-build-debug/
+      script:
+        - cmake ../
+        - make
+        - ./cmake-build-debug/prog
 
     - stage: tests
       name: "CheckSpamTests"
-      script: ./cmake-build-dedbug/test
+
+      script:
+        - cmake ../
+        - make
+        - ./cmake-build-dedbug/test
