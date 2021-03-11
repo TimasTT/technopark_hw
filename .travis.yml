@@ -16,4 +16,5 @@ jobs:
     - stage: memcheck
       name: "Memory check"
       script:
+        - apt-get update && apt-get install -y valgrind
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test
