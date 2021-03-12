@@ -27,12 +27,12 @@ jobs:
     - stage: static_analysis
       name: "Static analysis"
       script:
-        - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
+        - ../cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
 
     - stage: linters
       name: "Linters"
       script:
-        - python2.7 cpplint/cpplint.py --extensions=c include/* src/* tests/*
-        - python2.7 cpplint/cpplint.py --extensions=c++ tests/*
+        - python2.7 ../cpplint/cpplint.py --extensions=c include/* src/* tests/*
+        - python2.7 ../cpplint/cpplint.py --extensions=c++ tests/*
 
 
