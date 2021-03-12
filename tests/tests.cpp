@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-	#include <input.h>
-	#include <mail_check_spam.h>
+    #include <input.h>
+    #include <mail_check_spam.h>
 }
 
 TEST(CheckSpamTest, SuccessfulInput) {

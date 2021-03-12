@@ -5,7 +5,6 @@ addons:
     packages:
       - cmake
       - valgrind
-      - cppcheck
 
 before_script:
   - mkdir cmake-build-debug
@@ -28,5 +27,12 @@ jobs:
     -stage: static_analysis
      name: "Static analysis"
      script:
-       - cppcheck --enable=all inconclusive src/* include/* tests/*
+       - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
+
+    -stage: linters
+     name: "Linters"
+     script:
+       - python2.7 cpplint/cpplint.py --extensions=c include/* src/* tests/*
+       - python2.7 cpplint/cpplint.py --extensions=c++ tests/*
+
 

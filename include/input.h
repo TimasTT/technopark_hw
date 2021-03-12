@@ -1,6 +1,6 @@
-#ifndef PROJECT_INPUT_H_
-#define PROJECT_INPUT_H_
+#ifndef INCLUDE_INPUT_H_
+#define INCLUDE_INPUT_H_
 
 char* input_with_allocation();
 
-#endif  // PROJECT_INCLUDE_INPUT_H_
+#endif  // INCLUDE_INPUT_H_

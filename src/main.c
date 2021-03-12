@@ -21,11 +21,11 @@ int main() {
     }
 
     char *new_text = input_with_allocation();
-    if(new_text == NULL) {
+    if (new_text == NULL) {
         return 0;
     }
 
-    mail *my_mail = (mail*)malloc(sizeof(mail));
+    mail *my_mail = malloc(sizeof(mail));
     if (my_mail == NULL) {
         return 0;
     }

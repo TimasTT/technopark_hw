@@ -20,7 +20,8 @@ errors write_mail_data(mail *my_mail) {
     return SUCCESSFUL;
 }
 
-errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const char *receiver_check, const char *theme_check, const char *text_check) {
+errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const char *receiver_check,
+                                const char *theme_check, const char *text_check) {
     if (my_mail == NULL || sender_check == NULL || receiver_check == NULL ||
         theme_check == NULL || text_check == NULL) {
         return ERR_INVALID_INPUT;
@@ -30,19 +31,19 @@ errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const c
         printf("error, check word found in sender\n");
         return ERR_CHECK_WORD_FOUND;
     } else {
-        my_mail->sender = (char *) malloc(strlen(sender_check) * sizeof(char) + 1);
+        my_mail->sender = malloc(strlen(sender_check) * sizeof(char) + 1);
         if (my_mail->sender == NULL) {
             return ERR_BAD_ALLOC;
         }
-        strcpy(my_mail->sender, sender_check);
+        snprintf(my_mail->sender, strlen(sender_check) * sizeof(char) + 1, "%s", sender_check);
     }
 
-    my_mail->receiver = (char *) malloc(strlen(receiver_check) * sizeof(char) + 1);
+    my_mail->receiver = malloc(strlen(receiver_check) * sizeof(char) + 1);
     if (my_mail->receiver == NULL) {
         free(my_mail->sender);
         return ERR_BAD_ALLOC;
     }
-    strcpy(my_mail->receiver, receiver_check);
+    snprintf(my_mail->receiver, strlen(receiver_check) * sizeof(char) + 1, "%s", receiver_check);
 
     if (strstr(theme_check, check_word)) {
         printf("error, check word found in theme\n");
@@ -50,13 +51,13 @@ errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const c
         free(my_mail->receiver);
         return ERR_CHECK_WORD_FOUND;
     } else {
-        my_mail->theme = (char *) malloc(strlen(theme_check) * sizeof(char) + 1);
+        my_mail->theme = malloc(strlen(theme_check) * sizeof(char) + 1);
         if (my_mail->theme == NULL) {
             free(my_mail->sender);
             free(my_mail->receiver);
             return ERR_BAD_ALLOC;
         }
-        strcpy(my_mail->theme, theme_check);
+        snprintf(my_mail->theme, strlen(theme_check) * sizeof(char) + 1, "%s", theme_check);
     }
 
     if (strstr(text_check, check_word)) {
@@ -66,14 +67,14 @@ errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const c
         free(my_mail->theme);
         return ERR_CHECK_WORD_FOUND;
     } else {
-        my_mail->text = (char *) malloc(strlen(text_check) * sizeof(char) + 1);
+        my_mail->text = malloc(strlen(text_check) * sizeof(char) + 1);
         if (my_mail->text == NULL) {
             free(my_mail->sender);
             free(my_mail->receiver);
             free(my_mail->theme);
             return ERR_BAD_ALLOC;
         }
-        strcpy(my_mail->text, text_check);
+        snprintf(my_mail->text, strlen(text_check) * sizeof(char) + 1, "%s", text_check);
     }
 
     return SUCCESSFUL;
