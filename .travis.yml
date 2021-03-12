@@ -5,6 +5,7 @@ addons:
     packages:
       - cmake
       - valgrind
+      - cppcheck
 
 before_script:
   - mkdir cmake-build-debug
@@ -23,3 +24,9 @@ jobs:
       name: "Memory check"
       script:
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test
+
+    -stage: static_analysis
+     name: "Static analysis"
+     script:
+       - cppcheck --enable=all inconclusive src/* include/* tests/*
+

@@ -25,10 +25,10 @@ TEST(CheckSpamTest, IncorrectInput) {
     ASSERT_NE(my_mail, nullptr);
     char sender[] = "Timofey";
     char receiver[] = "Anton";
-    char theme[] = "Course Project";
-    char text[] = "Hello, this швейцарские часы is course project";
+    char theme[] = "Course швейцарские часы Project";
+    char text[] = "Hello, this is course project";
     ASSERT_EQ(check_and_fill_mail_data(my_mail, sender, receiver, theme, text), ERR_CHECK_WORD_FOUND);
-    free_mail(my_mail);
+    free(my_mail);
 }
 
 int main(int argc, char **argv) {

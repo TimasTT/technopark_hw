@@ -27,10 +27,12 @@ char* input_with_allocation() {
             if (buffer[length - 1 + offset_in_buffer] != '\n') {
                 buffer_size *= 2;
 
-                //char * buffer_tmp = buffer;
-                buffer = (char*)realloc(buffer, buffer_size) ;
-                if (buffer == NULL) {
+                char* buffer_tmp = (char*)realloc(buffer, buffer_size) ;
+                if (buffer_tmp == NULL) {
+                    free(buffer);
                     return NULL;
+                } else {
+                    buffer = buffer_tmp;
                 }
 
                 offset_in_buffer += length;
