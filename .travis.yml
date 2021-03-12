@@ -27,7 +27,8 @@ jobs:
     - stage: static_analysis
       name: "Static analysis"
       script:
-        - ../cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
+        - cd ..
+        - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
 
     - stage: linters
       name: "Linters"
