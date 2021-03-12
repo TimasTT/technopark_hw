@@ -20,13 +20,35 @@ TEST(CheckSpamTest, SuccessfulInput) {
     free_mail(my_mail);
 }
 
-TEST(CheckSpamTest, IncorrectInput) {
+TEST(CheckSpamTest, IncorrectInputSender) {
+    mail *my_mail = (mail*)malloc(sizeof(mail));
+    ASSERT_NE(my_mail, nullptr);
+    char sender[] = "Timofey швейцарские часы ";
+    char receiver[] = "Anton";
+    char theme[] = "Course швейцарские часы Project";
+    char text[] = "Hello, this is course project";
+    ASSERT_EQ(check_and_fill_mail_data(my_mail, sender, receiver, theme, text), ERR_CHECK_WORD_FOUND);
+    free(my_mail);
+}
+
+TEST(CheckSpamTest, IncorrectInputTheme) {
     mail *my_mail = (mail*)malloc(sizeof(mail));
     ASSERT_NE(my_mail, nullptr);
     char sender[] = "Timofey";
     char receiver[] = "Anton";
     char theme[] = "Course швейцарские часы Project";
     char text[] = "Hello, this is course project";
+    ASSERT_EQ(check_and_fill_mail_data(my_mail, sender, receiver, theme, text), ERR_CHECK_WORD_FOUND);
+    free(my_mail);
+}
+
+TEST(CheckSpamTest, IncorrectInputText) {
+    mail *my_mail = (mail*)malloc(sizeof(mail));
+    ASSERT_NE(my_mail, nullptr);
+    char sender[] = "Timofey швейцарские часы ";
+    char receiver[] = "Anton";
+    char theme[] = "Course швейцарские часы Project";
+    char text[] = "Hello, this is швейцарские часы course project";
     ASSERT_EQ(check_and_fill_mail_data(my_mail, sender, receiver, theme, text), ERR_CHECK_WORD_FOUND);
     free(my_mail);
 }
