@@ -10,9 +10,9 @@ addons:
       - cmake
       - valgrind
       - lcov
-      - gcc-6
 
 before_script:
+  - gcov --version && lcov --version
   - mkdir cmake-build-debug
   - cd cmake-build-debug
   - cmake ../
