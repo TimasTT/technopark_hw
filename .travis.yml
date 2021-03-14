@@ -5,6 +5,7 @@ addons:
     packages:
       - cmake
       - valgrind
+      - lcov
 
 before_script:
   - mkdir cmake-build-debug
