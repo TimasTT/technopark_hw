@@ -23,6 +23,7 @@ jobs:
     - stage: coverage
       name: "Test coverage"
       script:
+        - ./test
         - cd CMakeFiles/test.dir/tests
         - gcov tests.cpp.gcno
         - lcov --capture --directory ../../ --output-file tests.info
