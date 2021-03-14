@@ -24,7 +24,7 @@ jobs:
       name: "Test coverage"
       script:
         - cd CMakeFiles/test.dir/tests
-        - gcov tests.gcno
+        - gcov tests.cpp.gcno
         - lcov --capture --directory ../../ --output-file tests.info
         - genhtml -o ../../../../coverage-report tests.info
         - cd ../../../
