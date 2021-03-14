@@ -1,4 +1,8 @@
 language: c
+dist: trusty
+
+compiler:
+  - gcc
 
 addons:
   apt:
@@ -6,6 +10,8 @@ addons:
       - cmake
       - valgrind
       - lcov
+      - gcc-6
+      - g++-7
 
 before_script:
   - mkdir cmake-build-debug
