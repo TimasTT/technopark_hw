@@ -11,7 +11,7 @@ addons:
       - valgrind
       - lcov
       - gcc-6
-      - g++-7
+      - g++-6
 
 before_script:
   - mkdir cmake-build-debug
