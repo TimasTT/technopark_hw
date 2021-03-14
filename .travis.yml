@@ -15,9 +15,18 @@ before_script:
 jobs:
   include:
     - stage: tests
-      name: "CheckSpamTests"
+      name: "Check tests"
       script:
         - ./test
+
+    - stage: coverage
+      name: "Test coverage"
+      script:
+        - cd CMakeFiles/test.dir/tests
+        - gcov tests.gcno
+        - lcov --capture --directory ../../ --output-file tests.info
+        - genhtml -o ../../../../coverage-report tests.info
+        - cd ../../../
 
     - stage: memcheck
       name: "Memory check"

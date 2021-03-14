@@ -1,27 +1,29 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "input.h"
+#include "custom_string.h"
 #include "mail_check_spam.h"
 
 int main() {
-    char *new_sender = input_with_allocation();
-    if (new_sender == NULL) {
+    set_check_word("швейцарские часы");
+
+    str* sender = input_with_allocation();
+    if (sender == NULL) {
         return 0;
     }
 
-    char *new_receiver = input_with_allocation();
-    if (new_receiver == NULL) {
-        return 0;
-    }
-    char *new_theme = input_with_allocation();
-    if (new_theme == NULL) {
+    str *receiver = input_with_allocation();
+    if (receiver == NULL) {
         return 0;
     }
 
-    char *new_text = input_with_allocation();
-    if (new_text == NULL) {
+    str *theme = input_with_allocation();
+    if (theme == NULL) {
+        return 0;
+    }
+
+    str *text = input_with_allocation();
+    if (text == NULL) {
         return 0;
     }
 
@@ -29,19 +31,19 @@ int main() {
     if (my_mail == NULL) {
         return 0;
     }
+    fill_mail_data(my_mail, sender, receiver, theme, text);
 
-    errors err = check_and_fill_mail_data(my_mail, new_sender, new_receiver, new_theme, new_text);
+    errors err = check_mail_data(my_mail);
     if (err != SUCCESSFUL) {
+        free_mail(my_mail);
         exit(EXIT_FAILURE);
     }
 
-    free(new_sender);
-    free(new_receiver);
-    free(new_theme);
-    free(new_text);
+    free_str(check_word);
 
     err = write_mail_data(my_mail);
     if (err != SUCCESSFUL) {
+        free_mail(my_mail);
         exit(EXIT_FAILURE);
     }
 

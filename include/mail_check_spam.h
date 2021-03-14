@@ -1,6 +1,8 @@
 #ifndef INCLUDE_MAIL_CHECK_SPAM_H_
 #define INCLUDE_MAIL_CHECK_SPAM_H_
 
+#include "custom_string.h"
+
 typedef enum {
     ERR_CHECK_WORD_FOUND,
 
@@ -11,16 +13,22 @@ typedef enum {
 } errors;
 
 typedef struct mail_t {
-    char *sender;
-    char *receiver;
-    char *theme;
-    char *text;
+    str* sender;
+    str* receiver;
+    str* theme;
+    str* text;
 } mail;
 
-errors write_mail_data(mail *my_mail);
+str* check_word;
 
-errors check_and_fill_mail_data(mail *my_mail, const char *sender_check, const char *receiver_check,
-                                const char *theme_check, const char *text_check);
+void set_check_word(char* s);
+
+errors fill_mail_data(mail *my_mail, str *sender_check, str *receiver_check,
+                      str *theme_check, str *text_check);
+
+errors check_mail_data(mail *my_mail);
+
+errors write_mail_data(mail *my_mail);
 
 errors free_mail(mail *my_mail);
 
