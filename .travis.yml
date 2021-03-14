@@ -1,8 +1,4 @@
 language: c
-dist: trusty
-
-compiler:
-  - gcc
 
 addons:
   apt:
