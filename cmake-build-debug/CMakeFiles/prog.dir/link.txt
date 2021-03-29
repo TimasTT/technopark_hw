@@ -1,0 +1,1 @@
+/usr/bin/cc -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/prog.dir/src/main.c.o  -o prog libFileUtilsStatic.a 

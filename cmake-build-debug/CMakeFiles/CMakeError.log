@@ -1,0 +1,63 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7866e/fast && /usr/bin/make -f CMakeFiles/cmTC_7866e.dir/build.make CMakeFiles/cmTC_7866e.dir/build
+make[1]: Entering directory '/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7866e.dir/src.c.o
+/usr/bin/cc   -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7866e.dir/src.c.o   -c /home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7866e
+/home/timas/JetBrains/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7866e.dir/link.txt --verbose=1
+/usr/bin/cc -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -DCMAKE_HAVE_LIBC_PTHREAD  -fprofile-arcs -ftest-coverage  CMakeFiles/cmTC_7866e.dir/src.c.o  -o cmTC_7866e 
+CMakeFiles/cmTC_7866e.dir/src.c.o: In function `main':
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7866e.dir/build.make:86: recipe for target 'cmTC_7866e' failed
+make[1]: *** [cmTC_7866e] Error 1
+make[1]: Leaving directory '/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_7866e/fast' failed
+make: *** [cmTC_7866e/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1316b/fast && /usr/bin/make -f CMakeFiles/cmTC_1316b.dir/build.make CMakeFiles/cmTC_1316b.dir/build
+make[1]: Entering directory '/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1316b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1316b.dir/CheckFunctionExists.c.o   -c /home/timas/JetBrains/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1316b
+/home/timas/JetBrains/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1316b.dir/link.txt --verbose=1
+/usr/bin/cc -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -DCHECK_FUNCTION_EXISTS=pthread_create  -fprofile-arcs -ftest-coverage  CMakeFiles/cmTC_1316b.dir/CheckFunctionExists.c.o  -o cmTC_1316b -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1316b.dir/build.make:86: recipe for target 'cmTC_1316b' failed
+make[1]: *** [cmTC_1316b] Error 1
+make[1]: Leaving directory '/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_1316b/fast' failed
+make: *** [cmTC_1316b/fast] Error 2
+
+
+

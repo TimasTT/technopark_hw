@@ -1,0 +1,1 @@
+/usr/bin/cc -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/stress_test_s.dir/tests/stress_test_static.c.o  -o stress_test_s libFileUtilsStatic.a 

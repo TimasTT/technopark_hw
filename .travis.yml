@@ -1,0 +1,65 @@
+language: c
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - valgrind
+      - lcov
+
+before_script:
+  - mkdir cmake-build-debug
+  - cd cmake-build-debug
+  - cmake ../
+  - touch my_file
+  - touch test_file
+  - touch result
+  - make
+
+jobs:
+  include:
+    - stage: u-tests
+      name: "Unit-tests"
+      script:
+        - ./test_s
+        - ./test_d
+
+    - stage: coverage
+      name: "Test coverage dynamic library"
+      script:
+        - ./test_d
+        - ./test_s
+        - cd CMakeFiles/test_d.dir/tests
+        - gcov unit_tests_dynamic.cpp.gcno
+        - lcov --capture --directory ../../ --output-file unit_tests_dynamic.info
+        - genhtml -o ../../../../coverage-report unit_tests_dynamic.info
+        - cd ../../../
+
+    - stage: stress_tests
+      name: "Stress tests for libraries"
+      script:
+        - ./prog
+        - ./stress_test_s
+        - ./stress_test_d
+        - ./stress_test_controller
+
+    - stage: memcheck
+      name: "Memory check"
+      script:
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test_s
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test_d
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_s
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_d
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_controller
+
+    - stage: static_analysis
+      name: "Static analysis"
+      script:
+        - cd ..
+        - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
+
+    - stage: linters
+      name: "Linters"
+      script:
+        - python2.7 ../cpplint/cpplint.py --extensions=c include/* src/*
+        - python2.7 ../cpplint/cpplint.py --extensions=c++ tests/*

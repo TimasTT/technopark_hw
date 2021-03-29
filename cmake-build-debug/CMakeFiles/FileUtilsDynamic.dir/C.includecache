@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/file_utils_dynamic.h
+
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/src/file_utils_dynamic.c
+stdio.h
+-
+stdlib.h
+-
+fcntl.h
+-
+zconf.h
+-
+sys/mman.h
+-
+wait.h
+-
+math.h
+-
+string.h
+-
+file_utils_dynamic.h
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/src/file_utils_dynamic.h
+

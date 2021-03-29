@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/tests/stress_tests_controller.c
+sys/mman.h
+-
+stdlib.h
+-
+stdio.h
+-
+fcntl.h
+-
+zconf.h
+-
+
