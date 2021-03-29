@@ -1,1 +1,0 @@
-/usr/bin/c++  -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/test_d.dir/tests/unit_tests_dynamic.cpp.o  -o test_d -Wl,-rpath,/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug libFileUtilsDynamic.so lib/libgtestd.a -lpthread -lpthread 

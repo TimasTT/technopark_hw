@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFileUtilsStatic.a  CMakeFiles/FileUtilsStatic.dir/src/file_utils_static.c.o
-/usr/bin/ranlib libFileUtilsStatic.a

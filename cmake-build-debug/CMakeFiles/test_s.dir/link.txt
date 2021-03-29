@@ -1,1 +1,0 @@
-/usr/bin/c++  -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/test_s.dir/tests/unit_tests_static.cpp.o  -o test_s libFileUtilsStatic.a lib/libgtestd.a -lpthread -lpthread 

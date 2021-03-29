@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -shared -Wl,-soname,libFileUtilsDynamic.so -o libFileUtilsDynamic.so CMakeFiles/FileUtilsDynamic.dir/src/file_utils_dynamic.c.o 

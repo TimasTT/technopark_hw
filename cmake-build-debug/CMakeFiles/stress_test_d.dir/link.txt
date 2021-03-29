@@ -1,1 +1,0 @@
-/usr/bin/cc -g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage CMakeFiles/stress_test_d.dir/tests/stress_test_dynamic.c.o  -o stress_test_d -Wl,-rpath,/home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug libFileUtilsDynamic.so 

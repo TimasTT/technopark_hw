@@ -1,5 +1,0 @@
-/home/timas/JetBrains/clion-2019.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/timas/technopark_hw/technopark_cpp_hw/technopark_hw
--- Found Python: /usr/bin/python3.5 (found version "3.5.2") found components:  Interpreter 
--- Configuring done
--- Generating done
--- Build files have been written to: /home/timas/technopark_hw/technopark_cpp_hw/technopark_hw/cmake-build-debug
