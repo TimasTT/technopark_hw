@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4278a93d-b3c5-4a3f-b7f7-e2716aea2813" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/avr.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/bsd.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/cppcheck-cfg.rng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/cppcheck-lib.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/embedded_sql.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/gnu.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/gtk.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/microsoft_sal.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/motif.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/posix.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/qt.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/sdl.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/sfml.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/std.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/windows.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cfg/wxwidgets.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cppcheck/cppcheck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cpplint/CPPLINT.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cpplint/cpplint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/file_utils_dynamic.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/file_utils_static.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/file_utils_dynamic.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/file_utils_static.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/stress_test_dynamic.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/stress_test_static.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/stress_tests_controller.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit_tests_dynamic.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit_tests_static.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thirdparty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qRmG9KMZxKSD3TO8vcK6dW2v6Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.stress_test_controller">
+    <configuration name="FileUtilsDynamic" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="FileUtilsDynamic" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtilsStatic" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="FileUtilsStatic" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="prog" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="prog" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="prog">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stress_test_controller" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="stress_test_controller" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="stress_test_controller">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stress_test_d" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="stress_test_d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="stress_test_d">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="stress_test_s" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="stress_test_s" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="stress_test_s">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_d" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="test_d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="test_d">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_s" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="technopark_hw1" TARGET_NAME="test_s" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="technopark_hw1" RUN_TARGET_NAME="test_s">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.FileUtilsDynamic" />
+      <item itemvalue="CMake Application.FileUtilsStatic" />
+      <item itemvalue="CMake Application.prog" />
+      <item itemvalue="CMake Application.stress_test_controller" />
+      <item itemvalue="CMake Application.stress_test_d" />
+      <item itemvalue="CMake Application.stress_test_s" />
+      <item itemvalue="CMake Application.test_d" />
+      <item itemvalue="CMake Application.test_s" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4278a93d-b3c5-4a3f-b7f7-e2716aea2813" name="Default Changelist" comment="" />
+      <created>1617050677559</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617050677559</updated>
+      <workItem from="1617050678688" duration="24000" />
+      <workItem from="1617050733702" duration="42000" />
+      <workItem from="1617050786776" duration="509000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

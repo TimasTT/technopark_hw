@@ -1,1 +1,0 @@
-# technopark_hw1
