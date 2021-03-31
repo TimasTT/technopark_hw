@@ -22,9 +22,16 @@ before_script:
 
 jobs:
   include:
+    - stage: static_analysis
+      name: "Static analysis"
+      script:
+        - cd ..
+        - cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
+
     - stage: u-tests
       name: "Unit-tests"
       script:
+        - cd cmake-build-debug
         - ./test_s
         - ./test_d
 
@@ -56,8 +63,3 @@ jobs:
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_d
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_controller
 
-    - stage: static_analysis
-      name: "Static analysis"
-      script:
-        - cd ..
-        - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
