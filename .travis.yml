@@ -25,7 +25,6 @@ jobs:
     - stage: u-tests
       name: "Unit-tests"
       script:
-        - cd cmake-build-debug
         - ./test_s
         - ./test_d
 
