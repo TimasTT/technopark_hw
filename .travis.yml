@@ -1,11 +1,15 @@
 language: c
 
+install:
+  - pip install cpplint
+
 addons:
   apt:
     packages:
       - cmake
       - valgrind
       - lcov
+      - cppcheck
 
 before_script:
   - mkdir cmake-build-debug
@@ -57,9 +61,3 @@ jobs:
       script:
         - cd ..
         - ./cppcheck/cppcheck --enable=all --error-exitcode=1 --inconclusive include/* src/* tests/*
-
-    - stage: linters
-      name: "Linters"
-      script:
-        - python2.7 ../cpplint/cpplint.py --extensions=c include/* src/*
-        - python2.7 ../cpplint/cpplint.py --extensions=c++ tests/*
