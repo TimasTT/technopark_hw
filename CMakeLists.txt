@@ -41,7 +41,7 @@ add_executable(stress_test_controller tests/stress_tests_controller.c)
 #target_link_libraries(stress_test FileUtilsStatic gtest ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(stress_test_d tests/stress_test_dynamic.c)
-target_link_libraries(stress_test_d FileUtilsDynamic)
+target_link_libraries(stress_test_d FileUtilsDynamic  ${CMAKE_DL_LIBS})
 
 add_executable(stress_test_s tests/stress_test_static.c)
 target_link_libraries(stress_test_s FileUtilsStatic)
