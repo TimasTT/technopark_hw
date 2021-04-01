@@ -25,18 +25,16 @@ jobs:
     - stage: u-tests
       name: "Unit-tests"
       script:
-        - ./test_s
-        - ./test_d
+        - ./test
 
     - stage: coverage
       name: "Test coverage dynamic library"
       script:
-        - ./test_d
-        - ./test_s
-        - cd CMakeFiles/test_d.dir/tests
-        - gcov unit_tests_dynamic.cpp.gcno
-        - lcov --capture --directory ../../ --output-file unit_tests_dynamic.info
-        - genhtml -o ../../../../coverage-report unit_tests_dynamic.info
+        - ./test
+        - cd CMakeFiles/test.dir/tests
+        - gcov unit_tests.cpp.gcno
+        - lcov --capture --directory ../../ --output-file unit_tests.info
+        - genhtml -o ../../../../coverage-report unit_tests.info
         - cd ../../../
 
     - stage: stress_tests
@@ -50,8 +48,7 @@ jobs:
     - stage: memcheck
       name: "Memory check"
       script:
-        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test_s
-        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test_d
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_s
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_d
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_controller

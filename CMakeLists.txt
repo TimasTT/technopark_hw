@@ -11,11 +11,11 @@ set(CMAKE_C_FLAGS "-g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage")
 #[[set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)]]
 set(CMAKE_EXE_LINKER_FLAGS "-fprofile-arcs -ftest-coverage")
 
-add_library(FileUtilsStatic STATIC include/file_utils_static.h src/file_utils_static.c)
+add_library(FileUtilsStatic STATIC include/file_utils.h src/file_utils.c)
 target_include_directories(FileUtilsStatic PUBLIC include)
 
 
-add_library(FileUtilsDynamic SHARED include/file_utils_dynamic.h src/file_utils_dynamic.c)
+add_library(FileUtilsDynamic SHARED include/file_utils.h src/file_utils.c)
 target_include_directories(FileUtilsDynamic PUBLIC include)
 
 #realisation with static library
@@ -30,11 +30,8 @@ add_subdirectory(thirdparty)
 find_package(Threads)
 
 #unit-tests
-add_executable(test_s tests/unit_tests_static.cpp)
-target_link_libraries(test_s FileUtilsStatic gtest ${CMAKE_THREAD_LIBS_INIT})
-
-add_executable(test_d tests/unit_tests_dynamic.cpp)
-target_link_libraries(test_d FileUtilsDynamic gtest ${CMAKE_THREAD_LIBS_INIT})
+add_executable(test tests/unit_tests.cpp)
+target_link_libraries(test FileUtilsStatic gtest ${CMAKE_THREAD_LIBS_INIT})
 
 #stress-tests
 add_executable(stress_test_controller tests/stress_tests_controller.c)

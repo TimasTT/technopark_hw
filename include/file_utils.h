@@ -25,4 +25,9 @@ errors fill_file(const char* filename, int file_size);
 
 errors file_bytes_check(const char* filename, int file_size, int* dif_cnt, int cnt);
 
+errors file_bytes_check_processes(const char* filename, int file_size, int* dif_cnt, int cnt);
+
+errors running_processes(char* result_region, char* checking_region, int file_size, int cnt,
+                         int bytes_for_one_calculation);
+
 #endif  // INCLUDE_FILE_UTILS_STATIC_H_

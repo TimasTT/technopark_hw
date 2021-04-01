@@ -5,9 +5,6 @@
 #include <fcntl.h>
 #include <dlfcn.h>
 
-
-//#include "file_utils_dynamic.h"
-
 int main(int argc, char *argv[]) {
     if (argc != 4) {
         return 0;
@@ -21,7 +18,6 @@ int main(int argc, char *argv[]) {
     }
 
     int start = clock();
-    //printf("%s %s %s\n", argv[1], argv[2], argv[3]);
 
     void (*set_processes_amount)(int);
     set_processes_amount = dlsym(handle, "set_processes_amount");
@@ -43,9 +39,9 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    void (*file_bytes_check)(const char *, int, int *, int);
-    file_bytes_check = dlsym(handle, "file_bytes_check");
-    (*file_bytes_check)(argv[3], file_s, dif_cnt, processes);
+    void (*file_bytes_check_processes)(const char *, int, int *, int);
+    file_bytes_check_processes = dlsym(handle, "file_bytes_check_processes");
+    (*file_bytes_check_processes)(argv[3], file_s, dif_cnt, processes);
     int end = clock();
 
     dif_cnt[processes] = end - start;
@@ -56,11 +52,6 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    /*for (int k = 0; k < processes + 1; k++) {
-        printf("%i ", dif_cnt[k]);
-    }
-    printf("\n");*/
-
     int size = (processes + 1) * sizeof(int);
     if (write(fd_res, dif_cnt, (processes + 1) * sizeof(int)) != size) {
         free(dif_cnt);
@@ -68,7 +59,6 @@ int main(int argc, char *argv[]) {
     }
 
     free(dif_cnt);
-    //printf("%i\n", end - start);
     dlclose(handle);
     return 0;
 }
