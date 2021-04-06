@@ -50,7 +50,7 @@ TEST(FileUtilsTest, CheckBytesInFileInvalidFilename) {
 }
 
 TEST(FileUtilsTest, CheckBytesIn100mbFile) {
-    int file_size = 10 * 1024 * 1024;
+    int file_size = 100 * 1024 * 1024;
     int processes = 10;
     const char* filename = "my_file";
     ASSERT_EQ(fill_file_random(filename, file_size), SUCCESSFUL);
@@ -76,7 +76,7 @@ TEST(FileUtilsTest, CheckBytesProcessesInFileInvalidFilename) {
 }
 
 TEST(FileUtilsTest, CheckBytesIn100mbFileWithProcesses) {
-    int file_size = 10 * 1024 * 1024;
+    int file_size = 100 * 1024 * 1024;
     int processes = 10;
     const char* filename = "my_file";
     ASSERT_EQ(fill_file_random(filename, file_size), SUCCESSFUL);

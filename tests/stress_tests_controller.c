@@ -50,7 +50,7 @@ int main() {
     }
 
     int time_static_lib = get_result_lib(dif_cnt_static_lib, processes,
-                                  "../cmake-build-debug/stress_test_s 10 10485760 my_file");
+                                  "../cmake-build-debug/stress_test_s 10 104857600 my_file");
     if (time_static_lib == -1) {
         free(dif_cnt_dynamic_lib);
         free(dif_cnt_static_lib);
@@ -58,7 +58,7 @@ int main() {
     }
 
     int time_dynamic_lib = get_result_lib(dif_cnt_dynamic_lib, processes,
-                                   "../cmake-build-debug/stress_test_d 10 10485760 my_file");
+                                   "../cmake-build-debug/stress_test_d 10 104857600 my_file");
     if (time_dynamic_lib == -1) {
         free(dif_cnt_dynamic_lib);
         free(dif_cnt_static_lib);

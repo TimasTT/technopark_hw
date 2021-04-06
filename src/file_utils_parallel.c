@@ -33,10 +33,10 @@ errors running_processes(char* result_region, char* checking_region, int file_si
     if (pid_list == NULL) {
         return ERR_BAD_ALLOC;
     }
-    int pid = -1, status, pid_list_iter = 0;
+    int status, pid_list_iter = 0;
 
     for (int i = 0; i < cnt; ++i) {
-        pid = fork();
+        int pid = fork();
 
         if (pid > 0) {
             pid_list[pid_list_iter++] = pid;
