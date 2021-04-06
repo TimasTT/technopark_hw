@@ -41,7 +41,7 @@ errors running_processes(char* result_region, char* checking_region, int file_si
         if (pid > 0) {
             pid_list[pid_list_iter++] = pid;
         } else {
-            if (i == 9) {
+            if (i == cnt - 1) {
                 free(pid_list);
                 exit(0);
             }
@@ -60,7 +60,7 @@ errors running_processes(char* result_region, char* checking_region, int file_si
             exit(0);
         }
 
-        if (i == 9) {
+        if (i == cnt - 1) {
             int tmp = bytes_check(checking_region, file_size, i);
             for (int k = 0; k < bytes_for_one_calculation; ++k) {
                 result_region[(i + 1) * bytes_for_one_calculation - k] = tmp % 128;
