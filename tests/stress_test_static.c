@@ -11,8 +11,8 @@ int main(int argc, char *argv[]) {
         return 0;
     }
     int start = clock();
-    set_processes_amount(atoi(argv[1]));
-    set_file_size_amount(atoi(argv[2]));
+    int processes = atoi(argv[1]);
+    int file_s = atoi(argv[2]);
     //fill_file(argv[3], file_s);
 
     int* dif_cnt = malloc((processes + 1)* sizeof(int));

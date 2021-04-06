@@ -25,14 +25,15 @@ jobs:
     - stage: u-tests
       name: "Unit-tests"
       script:
-        - ./test
+        - ./u_test_dynamic
+        - ./u_test_static
 
     - stage: coverage
       name: "Test coverage dynamic library"
       script:
-        - ./test
-        - cd CMakeFiles/test.dir/tests
-        - gcov unit_tests.cpp.gcno
+        - ./u_test_dynamic
+        - cd CMakeFiles/u_test_dynamic.dir/tests
+        - gcov unit_tests_parallel.cpp.gcno
         - lcov --capture --directory ../../ --output-file unit_tests.info
         - genhtml -o ../../../../coverage-report unit_tests.info
         - cd ../../../
@@ -48,7 +49,8 @@ jobs:
     - stage: memcheck
       name: "Memory check"
       script:
-        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./test
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./u_test_dynamic
+        - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./u_test_static
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_s
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_d
         - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./stress_test_controller
