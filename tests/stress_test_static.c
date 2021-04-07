@@ -13,11 +13,10 @@ int main(int argc, char *argv[]) {
     int start = clock();
     int processes = atoi(argv[1]);
     int file_s = atoi(argv[2]);
-    //fill_file(argv[3], file_s);
 
     int* dif_cnt = malloc((processes + 1)* sizeof(int));
     if (dif_cnt == NULL) {
-        return -1;
+        return 1;
     }
 
     file_bytes_check(argv[3], file_s, dif_cnt, processes);
@@ -28,13 +27,13 @@ int main(int argc, char *argv[]) {
     int fd_res = open("result", O_RDWR);
     if (fd_res < 0) {
         free(dif_cnt);
-        return -1;
+        return 2;
     }
 
     int size = (processes + 1) * sizeof(int);
     if (write(fd_res, dif_cnt, (processes + 1) * sizeof(int)) != size) {
         free(dif_cnt);
-        return -1;
+        return 3;
     }
 
     free(dif_cnt);

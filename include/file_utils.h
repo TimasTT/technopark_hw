@@ -17,4 +17,6 @@ errors fill_file_random(const char* filename, int file_size);
 
 errors file_bytes_check(const char* filename, int file_size, int* dif_cnt, int cnt);
 
+errors bytes_check(const char* checking_region, int file_size, int dif);
+
 #endif  // INCLUDE_FILE_UTILS_STATIC_H_

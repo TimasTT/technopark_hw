@@ -51,3 +51,17 @@ errors fill_file_random(const char* filename, int file_size) {
     close(fd_random_data);
     return SUCCESSFUL;
 }
+
+errors bytes_check(const char* checking_region, int file_size, int dif) {
+    if (checking_region == NULL) {
+        return ERR_INVALID_INPUT;
+    }
+    int cnt = 0;
+    for (int i = 0; i < file_size - 1; ++i) {
+        if (abs(checking_region[i] - checking_region[i + 1]) == dif) {
+            cnt++;
+        }
+    }
+
+    return cnt;
+}

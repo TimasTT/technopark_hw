@@ -41,12 +41,12 @@ int main() {
     int processes = 10;
     int *dif_cnt_static_lib = malloc((processes + 1) * sizeof(int));
     if (dif_cnt_static_lib == NULL) {
-        return -1;
+        return 1;
     }
     int *dif_cnt_dynamic_lib = malloc((processes + 1) * sizeof(int));
     if (dif_cnt_dynamic_lib == NULL) {
         free(dif_cnt_static_lib);
-        return -1;
+        return 1;
     }
 
     int time_static_lib = get_result_lib(dif_cnt_static_lib, processes,
@@ -54,7 +54,7 @@ int main() {
     if (time_static_lib == -1) {
         free(dif_cnt_dynamic_lib);
         free(dif_cnt_static_lib);
-        return -1;
+        return 2;
     }
 
     int time_dynamic_lib = get_result_lib(dif_cnt_dynamic_lib, processes,
@@ -62,14 +62,14 @@ int main() {
     if (time_dynamic_lib == -1) {
         free(dif_cnt_dynamic_lib);
         free(dif_cnt_static_lib);
-        return -1;
+        return 2;
     }
 
     for (int i = 0; i < processes; ++i) {
         if (dif_cnt_dynamic_lib[i] != dif_cnt_static_lib[i]) {
             free(dif_cnt_static_lib);
             free(dif_cnt_dynamic_lib);
-            return -1;
+            return 3;
         }
     }
 

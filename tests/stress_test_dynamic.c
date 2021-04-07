@@ -22,13 +22,9 @@ int main(int argc, char *argv[]) {
     int processes = atoi(argv[1]);
     int file_s = atoi(argv[2]);
 
-//    void (*fill_file)(const char *, int);
-//    fill_file = dlsym(handle, "fill_file");
-//    (*fill_file)(argv[3], file_s);
-
     int *dif_cnt = malloc((processes + 1) * sizeof(int));
     if (dif_cnt == NULL) {
-        return -1;
+        return 1;
     }
 
     void (*file_bytes_check)(const char *, int, int *, int);
@@ -41,13 +37,13 @@ int main(int argc, char *argv[]) {
     int fd_res = open("result", O_RDWR);
     if (fd_res < 0) {
         free(dif_cnt);
-        return -1;
+        return 2;
     }
 
     int size = (processes + 1) * sizeof(int);
     if (write(fd_res, dif_cnt, (processes + 1) * sizeof(int)) != size) {
         free(dif_cnt);
-        return -1;
+        return 3;
     }
 
     free(dif_cnt);

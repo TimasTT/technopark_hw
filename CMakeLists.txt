@@ -11,10 +11,10 @@ set(CMAKE_C_FLAGS "-g -O0 -Wall -Werror -Wextra -fprofile-arcs -ftest-coverage")
 #[[set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)]]
 set(CMAKE_EXE_LINKER_FLAGS "-fprofile-arcs -ftest-coverage")
 
-add_library(FileUtilsStatic STATIC include/file_utils.h src/file_utils_const.c src/fill_file_utils.c)
+add_library(FileUtilsStatic STATIC include/file_utils.h src/file_utils_consistent.c src/file_utils_common.c)
 target_include_directories(FileUtilsStatic PUBLIC include)
 
-add_library(FileUtilsDynamic SHARED include/file_utils.h src/file_utils_parallel.c src/fill_file_utils.c)
+add_library(FileUtilsDynamic SHARED include/file_utils.h src/file_utils_parallel.c src/file_utils_common.c)
 target_include_directories(FileUtilsDynamic PUBLIC include)
 
 #realisation with static library
@@ -29,7 +29,7 @@ add_subdirectory(thirdparty)
 find_package(Threads)
 
 #unit-tests
-add_executable(u_test_static tests/unit_tests_const.cpp)
+add_executable(u_test_static tests/unit_tests_consistent.cpp)
 target_link_libraries(u_test_static FileUtilsStatic gtest ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(u_test_dynamic tests/unit_tests_parallel.cpp)
